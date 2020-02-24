@@ -11,8 +11,6 @@
 void main() {
     iQueue * intQueue = NULL;
     Queue * charQueue = NULL;
-    ienQueue(1, intQueue);
-    enQueue('a', charQueue);
     char go = 's', newChar;
 	int option, charQueueSize, intQueueSize, newInt;
 	do{
@@ -42,12 +40,12 @@ void main() {
                 exit(0);
                 break;
             case 1:
-                puts("Introduza la capacidad de la pila de caracteres:");
+                puts("Introduza la capacidad de la cola de caracteres:");
 				scanf("%d", &charQueueSize);
                 charQueue = createQueue(charQueueSize);
                 break;
             case 2:
-                puts("Introduza la capacidad de la pila de caracteres:");
+                puts("Introduza la capacidad de la cola de caracteres:");
 				scanf("%d", &intQueueSize);
                 intQueue = createiQueue(intQueueSize);
                 break;
@@ -100,7 +98,7 @@ void main() {
                     puts("Current queue is empty");
                 break;
             case 11:
-                if(charQueue != NULL){
+                if(!queueIsEmpty(charQueue) && !queueIsFull(charQueue)){
 					fflush(stdin);
 					printf("Introduzca el caracter: ");
 					fflush(stdin);
@@ -111,7 +109,7 @@ void main() {
 					puts("Current queue is empty");
                 break;
             case 12:
-                if(intQueue != NULL){
+                if(!iqueueIsEmpty(intQueue) && !iqueueIsFull(intQueue)){
 					fflush(stdin);
 					printf("Introduzca el caracter: ");
 					fflush(stdin);
