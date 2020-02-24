@@ -52,19 +52,19 @@ void ienQueue(iqueueEntry item, iQueue * queue) {
     }
 }
 
-iqueueEntry queueFront(iQueue * queue) {
+iqueueEntry iqueueFront(iQueue * queue) {
     if(iqueueIsEmpty(queue))
         return CHAR_MIN;
     return queue->array[queue->front];
 }
 
-iqueueEntry queueRear(iQueue * queue) {
+iqueueEntry iqueueRear(iQueue * queue) {
     if(iqueueIsEmpty(queue))
         return CHAR_MIN;
     return queue->array[queue->rear];
 }
 
-iqueueEntry deQueue(iQueue * queue) {
+iqueueEntry ideQueue(iQueue * queue) {
     if(iqueueIsEmpty(queue))
         return CHAR_MIN;
     iqueueEntry data = queue->array[queue->front];
@@ -96,7 +96,6 @@ void printiQueue(iQueue * queue) {
         printf("-[%d]-", queue->array[i]); 
     for (i = 0; i <= queue->rear; i++) 
         printf("-[%d]-", queue->array[i]);
-    free(&i);
 }
 
 void cleariQueue(iQueue * queue) {

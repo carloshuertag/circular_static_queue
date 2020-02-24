@@ -1,0 +1,6 @@
+{
+    "files.associations": {
+        "circular_static_int_queue.h": "c",
+        "circular_static_char_queue.h": "c"
+    }
+}

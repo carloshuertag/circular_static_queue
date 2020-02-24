@@ -89,14 +89,13 @@ void printQueue(Queue * queue) {
     int i;
     if(queue->rear >= queue->front){
         for (i = queue->front; i <= queue->rear; i++) 
-            printf("-[%d]-", queue->array[i]);
+            printf("-[%c]-", queue->array[i]);
         return;
     }
     for (i = queue->front; i < queue->size; i++) 
-        printf("-[%d]-", queue->array[i]); 
+        printf("-[%c]-", queue->array[i]); 
     for (i = 0; i <= queue->rear; i++) 
-        printf("-[%d]-", queue->array[i]);
-    free(&i);
+        printf("-[%c]-", queue->array[i]);
 }
 
 void clearQueue(Queue * queue) {
