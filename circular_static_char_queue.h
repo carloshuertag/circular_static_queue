@@ -1,7 +1,7 @@
 /*****************************************
- * circular_static_int_queue
+ * circular_static_char_queue
  * @author: Carlos Huerta García
- * @description: Int queue implementation
+ * @description: Char queue implementation
  * **************************************/
 #include <stdlib.h>
 #include <stdio.h>
