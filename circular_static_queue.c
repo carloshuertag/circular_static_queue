@@ -45,7 +45,7 @@ void main() {
                 charQueue = createQueue(charQueueSize);
                 break;
             case 2:
-                puts("Introduza la capacidad de la cola de caracteres:");
+                puts("Introduza la capacidad de la cola de enteros:");
 				scanf("%d", &intQueueSize);
                 intQueue = createiQueue(intQueueSize);
                 break;
@@ -98,7 +98,7 @@ void main() {
                     puts("Current queue is empty");
                 break;
             case 11:
-                if(!queueIsEmpty(charQueue) && !queueIsFull(charQueue)){
+                if(charQueue && !queueIsFull(charQueue)){
 					fflush(stdin);
 					printf("Introduzca el caracter: ");
 					fflush(stdin);
@@ -106,10 +106,10 @@ void main() {
 					scanf("%c", &newChar);
 					enQueue(newChar, charQueue);
 				} else 
-					puts("Current queue is empty");
+					puts("Current queue is invalid");
                 break;
             case 12:
-                if(!iqueueIsEmpty(intQueue) && !iqueueIsFull(intQueue)){
+                if(intQueue && !iqueueIsFull(intQueue)){
 					fflush(stdin);
 					printf("Introduzca el caracter: ");
 					fflush(stdin);
@@ -117,7 +117,7 @@ void main() {
 					scanf("%d", &newInt);
 					ienQueue(newInt, intQueue);
 				} else 
-					puts("Current queue is empty");
+					puts("Current queue is invalid");
                 break;
             case 13:
                 clearQueue(charQueue);
