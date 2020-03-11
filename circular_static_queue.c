@@ -11,10 +11,10 @@
 void main() {
     iQueue * intQueue = NULL;
     Queue * charQueue = NULL;
-    char go = 's', newChar;
+    char newChar;
 	int option, charQueueSize, intQueueSize, newInt;
-	do{
-        puts("0 Salir");
+	while(1){
+        puts("\n\n0 Salir");
 		puts("1 Crear cola de caracteres");
 		puts("2 Crear cola de enteros");
 		puts("3 Mostrar cola de caracteres");
@@ -72,7 +72,7 @@ void main() {
             case 7:
                 newChar = queueRear(charQueue);
                 if(newChar != CHAR_MIN)
-                    printf("\nRear: %c\n", newInt);
+                    printf("\nRear: %c\n", newChar);
                 else
                     puts("Current queue is empty");
                 break;
@@ -111,9 +111,8 @@ void main() {
             case 12:
                 if(intQueue && !iqueueIsFull(intQueue)){
 					fflush(stdin);
-					printf("Introduzca el caracter: ");
+					printf("Introduzca el entero: ");
 					fflush(stdin);
-					scanf("%d", &newInt);
 					scanf("%d", &newInt);
 					ienQueue(newInt, intQueue);
 				} else 
@@ -129,11 +128,7 @@ void main() {
                 puts("Operación inválida");
                 break;
         }
-        printf("\n¿Desea realizar más operaciones? (s/n): ");
-        fflush(stdin);
-		scanf("%c", &go);
-		scanf("%c", &go);
-    } while(go == 's');
+    }
     clearQueue(charQueue);
     cleariQueue(intQueue);
     free(charQueue);
